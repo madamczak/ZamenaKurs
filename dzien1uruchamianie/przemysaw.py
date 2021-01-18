@@ -27,6 +27,7 @@ formatted_friday = "{:.1f}".format(friday_temp_f)
 formatted_saturday = "{:.1f}".format(saturday_temp_f)
 formatted_sunday = "{:.1f}".format(sunday_temp_f)
 # jak zrobic jedno miesce po przecinku, zeby sie nie jebac, tak jak ja sie jebalem
+# o tak kurwa print(round(monday_temp_f, 1))
 
 print(formatted_monday)
 print(formatted_tuesday)
