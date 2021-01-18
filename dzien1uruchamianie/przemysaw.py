@@ -78,10 +78,10 @@ print(sunday_temp_celsius)
 
 if monday_temp_celsius > monday_temp_b:
     print("Oooo, Panie, u nas w Lęborgu to ciepło, nie to co tam w Bostonie")
-elif monday_temp_celsius > monday_temp_b:
-    print("Oooo, Panie, u nas w Lęborgu to amerykansko pogoda je")
-else:
+elif monday_temp_celsius < monday_temp_b:
     print("Oooo, Panie, u nas w Lęborgu to zimno, nie to co tam w Bostonie")
+else:
+    print("Oooo, Panie, u nas w Lęborgu to amerykansko pogoda je")
 
 # Samodzielnie wymyśl co możesz powiedzieć jeżeli temperatury będą takie same.
 
