@@ -185,3 +185,5 @@ status = splitted_response_status.pop(1)
 print(date)
 print(time)
 print(status)
+
+# Bandziorno, senkju
