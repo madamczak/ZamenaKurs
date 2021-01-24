@@ -11,21 +11,66 @@ losowy_integer_od_1_do_31 = random.randint(1, 31)
 losowy_integer_od_1_do_12 = random.randint(1, 12)
 losowy_integer_od_1970_do_2021 = random.randint(1970, 2021)
 
-string_z_data = str(losowy_integer_od_1_do_31) + '-' + str(losowy_integer_od_1_do_12) + '-' + str(losowy_integer_od_1970_do_2021)
-print(string_z_data)
-
 print('\n')
 
 # Używając metody format i wygenerowanych utwórz string z datą w formacie dzień-miesiąc-rok i przypisz do zmiennej
 
 print('Zad. 1b' + '\n')
 
-import datetime
+string_z_data = str(losowy_integer_od_1_do_31) + '-' + str(losowy_integer_od_1_do_12) + '-' + str(losowy_integer_od_1970_do_2021)
+print(string_z_data)
 
-
+print('\n')
 
 #Utwórz z wygenerowanych wartości obiekt datetime - jakie mogą pojawić się tutaj problemy?
+
+print('Zad. 1c' + '\n')
+
+import datetime
+
+zmienna_datetime = datetime.datetime.strptime(string_z_data,'%d-%m-%Y')
+print(zmienna_datetime)
+
+print('\n')
+
+#Miesiące mają 30 albo 31 dni (oprócz lutego)
+#Luty może mieć 28 lub 29 dni w zależności od roku, a generujemy inta od 1 do 31.
+
 #Jak się przed nimi zabiezpieczyć?
+
+#trzeba by generować zmienne począwszy od roku i zrobić ifa, albo napisać walidator, czy ten wygenerowany string string_z_data się nadaje.
+
+print('Zad. 1d' + '\n')
+
+import calendar
+
+random_year = random.randint(1970, 2021)
+
+print('Wygenerowany rok: ' + str(random_year))
+print('Czy przestępny: ' + str(calendar.isleap(random_year)))
+
+months_30d_list = [4, 6, 9, 11]
+months_31d_list = [1, 3, 5, 7, 8, 10, 12]
+
+random_month = random.randint(1, 12)
+if random_month in months_30d_list:
+    random_day = random.randint(1, 30)
+elif random_month in months_31d_list:
+    random_day = random.randint(1, 31)
+elif calendar.isleap(random_year) == True:
+    random_day = random.randint(1, 29)
+else:
+     random_day = random.randint(1, 28)
+
+print('Wygenerowany miesiąc: ' + str(random_month))
+print('Wygenerowany dzień: ' + str(random_day))
+
+proper_random_date=(str(random_year)+str(random_month)+str(random_day))
+proper_random_date=datetime.datetime.strptime(proper_random_date,'%Y%m%d')
+
+print('W formacie datetime to by było: ' + str(proper_random_date))
+
+print('\n')
 
 #Zad 2 - daty i timedelta
 # utwórz obiekt datetime ze swoją datą urodzenia
