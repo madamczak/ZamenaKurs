@@ -44,7 +44,6 @@ piwko_start = (datetime.datetime.strptime('2004-02-01', '%Y-%m-%d'))
 # użyj do tego pętli i wzoruj się na następującym algorytmie:
 
 # petla for
-import calendar
 # utwórz zmienną licznik i przypisz jej wartość zero
 licznik = 0
 # policz ilość dni od rozpoczęcia picia do chwili obecnej i przypisz do zmiennej ilość_dni
@@ -64,12 +63,14 @@ for dzien in range (0, czas_picia):
 # wyprintuj ile dni byłeś pijany
 print('cześć, jestem przemek, w swoim zyciu byłem pijany ' + str(licznik) + ' dni')
 # jak zrobić to z użyciem pętli while?
+piwko_start_while = (datetime.datetime.strptime('2004-02-01', '%Y-%m-%d'))
 licznik_while = 0
-while piwko_start < czas_teraz:
-    piwko_start += datetime.timedelta(days = 1)
-    if datetime.datetime.weekday(piwko_start) == 4:
+while piwko_start_while < czas_teraz:
+    piwko_start_while += datetime.timedelta(days = 1)
+    if datetime.datetime.weekday(piwko_start_while) == 4:
         licznik_while = licznik_while + 1
 print('cześć, jestem przemek, w swoim zyciu byłem pijany ' + str(licznik_while) + ' dni')
+
 # Zad 3 - Wstęp do parsowania logów txt
 # w folderze dzien2petleiczas znajduje się plik logs.txt
 
