@@ -145,5 +145,21 @@ print(split_func)
 # przypisz do zmiennej date_and_time odpowiedni element
 # przypisz do zmiennej response_status odpowiedni element
 
+date_and_time = split_func.pop(0)
+print(date_and_time)
+response_status = split_func.pop(3)
+print(response_status)
 # Do metody split możesz podać dowolny znak lub fragment testu którym chcesz podzielić stringa -
 # utwórz zmienne date, time i status i przypisz im odpowiednie wartości
+
+split_date_and_time = date_and_time.split(sep="T")
+split_status = response_status.split(sep='=')
+print(split_date_and_time)
+
+date = split_date_and_time.pop(0)
+time = split_date_and_time.pop(0)
+status = split_status.pop(1)
+
+print(date)
+print(time)
+print(status)
