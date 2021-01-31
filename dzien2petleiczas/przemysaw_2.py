@@ -78,7 +78,12 @@ print('cześć, jestem przemek, w swoim zyciu byłem pijany ' + str(licznik_whil
 log_file = open('logs.txt')
 lines_from_log_file = log_file.readlines()
 log_file.close()
-
+#print(lines_from_log_file)
 # używając pętli znajdź linię z błędem(jest jedna taka linia) i wyprintuj ją na ekran.
 # błędy w logu są raportowane w parametrze status. Wszystkie błędy mają statusy rozpoczynające się od 4
 # np status=404 oznacza że strona nie istnieje
+
+line = 1
+for line in lines_from_log_file:
+    if line.find('status=4')>= 0:
+        print(line)
