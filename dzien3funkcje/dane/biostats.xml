@@ -1,0 +1,23 @@
+<biostats>
+    <person>
+        <name>Alex</name>
+        <sex>M</sex>
+        <age>41</age>
+        <height>74</height>
+        <weight>170</weight>
+    </person>
+    <person>
+        <name>Bert</name>
+        <sex>M</sex>
+        <age>42</age>
+        <height>68</height>
+        <weight>166</weight>
+    </person>
+    <person>
+        <name>Carla</name>
+        <sex>F</sex>
+        <age>32</age>
+        <height>70</height>
+        <weight>155</weight>
+    </person>
+</biostats>
