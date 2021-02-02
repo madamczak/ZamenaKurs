@@ -14,3 +14,14 @@
 
 #czas wypchnąć brancha na repo po raz pierwszy:
 #git push -u origin nazwa_brancha
+
+#wszystkie zmiany są na branchu zdalnym na repozytorium, jeżeli zmienimy coś lokalnie to commitujemy i robimy pusha na
+#ten sam branch, teraz wystarczy już git push.
+
+#wchodzimy na stronę repozytorium - https://github.com/madamczak/ZamenaKurs/ w zakłądkę pull requests
+#ustawiamy base: master, compare: nazwa_brancha i pojawia nam się diff z naszymi zmianami
+#czytamy co tam zmienilismy, jeżeli coś trzeba poprawić to poprawiamy, commit i push.
+#jeżeli jest ok to klikamy create pull request
+#ustawiamy reviewerów - ustawiamy siebie nawzajem i klikamy create pull request
+
+# jak zrobicie pull requesty z zadaniem domowym to się zdzwonimy i pogadamy co dalej
