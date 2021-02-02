@@ -31,6 +31,6 @@
 # A, T, C i G w tym łańcuchu.
 
 # 5. Łańcuch RNA jest bardzo podobny do DNA i składa się z następujących nukleotydów A, C, U i G (U - uracyl).
-# Twoim celem jest napisanie takiego samego zestawu funkcja dla RNA jak dla DNA w zadaniu 4. Jak to zrobisz?
+# Twoim celem jest napisanie takiego samego zestawu funkcji dla RNA jak dla DNA w zadaniu 4. Jak to zrobisz?
 # Będziesz kopiował? Będziesz modyfikował funkcje z zadania 4, tak żeby obsługiwały oba typy łańcuchów?
 # Które podejście będzie lepsze i co z niego wyniknie?
