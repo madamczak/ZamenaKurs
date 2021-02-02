@@ -54,7 +54,7 @@ def find_opening_and_closing_tag_for_all(all_apps_list):
 
 
 def combine_all_possible_machine_numbers(count_numbers_dictionary):
-    #currently supporting up to 3 regex value segments
+    # currently supporting up to 3 regex value segments
     combined_numbers = []
     max_depth_number = max(count_numbers_dictionary.keys())
     if max_depth_number > 2:
@@ -63,6 +63,7 @@ def combine_all_possible_machine_numbers(count_numbers_dictionary):
     zero_order_numbers = count_numbers_dictionary.get(0)
     first_order_numbers = count_numbers_dictionary.get(1)
     second_order_numbers = count_numbers_dictionary.get(1)
+
     if max_depth_number == 0:
         return zero_order_numbers
     elif max_depth_number == 1:
@@ -74,15 +75,13 @@ def combine_all_possible_machine_numbers(count_numbers_dictionary):
             for first_num in first_order_numbers:
                 for second_num in second_order_numbers:
                     combined_numbers.append(zero_num + first_num + second_num)
-    else:
-        raise Exception("Not supported")
 
     return combined_numbers
 
 
 def evaluate_server_names(server_name):
     list_of_evaluated_names = []
-    print(server_name)
+
     if "[" not in server_name:
         return [server_name]
 
@@ -107,7 +106,7 @@ def evaluate_server_names(server_name):
             numbers_per_count[count] = parserd_current_numbers
 
         server_name_prefix = server_name[:server_name.find("[")]
-        server_name_suffix = server_name[server_name.rfind("]")+1:]
+        server_name_suffix = server_name[server_name.rfind("]") + 1:]
 
         all_combined_numbers = combine_all_possible_machine_numbers(numbers_per_count)
         for machine_number in all_combined_numbers:
