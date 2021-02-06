@@ -2,8 +2,19 @@
 
 # Liczenie + Daty
 
-#1. napisz funkcję konwertującą temp w F na C, która przyjmuje listę temperatur i zwaraca listę
+# 1. napisz funkcję konwertującą temp w F na C, która przyjmuje listę temperatur i zwaraca listę
 # ze skonwetowanymi wartościami
+
+# def f_to_c(temp_f, precision=2):
+#     if type(temp_f) == str:
+#         print("Źle, popraw argument")
+#     else:
+#         return round(5 / 9 * (temp_f - 32), precision)
+
+def hello():
+    print ("Hello World!")
+    return
+
 # Jak sprawdzisz czy ta funkcja działa dobrze?
 
 #2. napisz funkcję która policzy średnią arytmetyczną wartości z listy podanej jako argument do funkcji
