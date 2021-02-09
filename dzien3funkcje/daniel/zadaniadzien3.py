@@ -2,26 +2,62 @@
 
 # Liczenie + Daty
 
-# 1. napisz funkcję konwertującą temp w F na C, która przyjmuje listę temperatur i zwaraca listę
-# ze skonwetowanymi wartościami
+# 1. napisz funkcję konwertującą temp w F na C, która przyjmuje listę temperatur i zwaraca listę ze skonwetowanymi wartościami
 
-# def f_to_c(temp_f, precision=2):
-#     if type(temp_f) == str:
-#         print("Źle, popraw argument")
-#     else:
-#         return round(5 / 9 * (temp_f - 32), precision)
+print('Zad. 1')
 
-def hello():
-    print ("Hello World!")
-    return
+def f_to_c(temp_f, precision=2):
+    return round(5 / 9 * (temp_f - 32), precision)
 
 # Jak sprawdzisz czy ta funkcja działa dobrze?
 
-#2. napisz funkcję która policzy średnią arytmetyczną wartości z listy podanej jako argument do funkcji
+## assertem
+
+assert f_to_c(32, precision=5) == 0
+assert f_to_c(212, precision=5) == 100
+
+print(f_to_c(32))
+
+print('\n'+'Zad. 2a.')
+
+# 2. napisz funkcję która policzy średnią arytmetyczną wartości z listy podanej jako argument do funkcji
+
+def average(lista):
+    return sum(lista)/len(lista)
+
+print(average([10,20,10,20]))
+
 # Jakie tu mogą być problemy? Jak sprawdzisz czy funkcja działa dobrze?
 
-#3. napisz funkcję generującą losowe obiekty datetime. Funkcja posiada argument wejściowy ile_dni, a zwraca listę losowych
-#obiektów datetime o takiej długości jak argument ile_dni.
+## problemy? może być niepoprawny format wejścia
+## można sprawdzić też assertem
+
+print('\n'+'Zad. 2b.')
+
+def average(lst):
+    if type(lst) == str:
+        return print("incorrect input parameter, must be list of ints")
+    else:
+        return sum(lst)/len(lst)
+
+assert average([2,4]) == 3
+
+print(average([5,8,19,21]))
+
+# 3 napisz funkcję generującą losowe obiekty datetime. Funkcja posiada argument wejściowy ile_dni, a zwraca listę losowych obiektów datetime o takiej długości jak argument ile_dni.
+
+print('\n'+'Zad. 3a.')
+
+import random
+
+def random_day(ile_dni):
+    lista_z_dniami = []
+    for dzien in ile_dni:
+        append.lista_z_dniami(random.date_and_time)
+
+print(random_day(3))
+print(lista_z_dniami)
+
 # Jak sprawdzisz czy funkcja działa dobrze?
 # Dodaj opcjonalny argument do funkcji który będzie decydował o tym czy zwaracan lista jest posortowana lub nie
 # Jak sprawdzisz działanie dodatkowego argumentu?
