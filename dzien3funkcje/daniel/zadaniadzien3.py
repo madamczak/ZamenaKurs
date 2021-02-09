@@ -49,18 +49,45 @@ print(average([5,8,19,21]))
 print('\n'+'Zad. 3a.')
 
 import random
+from datetime import datetime, timedelta
 
-def random_day(ile_dni):
+# uwaga, funkcja generatora z netu https://gist.github.com/rg3915/db907d7455a4949dbe69
+
+def gen_datetime(min_year=1900, max_year=datetime.now().year):
+    start = datetime(min_year, 1, 1, 00, 00, 00)
+    years = max_year - min_year + 1
+    end = start + timedelta(days=365 * years)
+    return start + (end - start) * random.random()
+
+def random_daytime(ile_dni):
     lista_z_dniami = []
-    for dzien in ile_dni:
-        append.lista_z_dniami(random.date_and_time)
+    for dzien in range(ile_dni):
+        random_date = str(gen_datetime())
+        lista_z_dniami.append(random_date)
+    return(lista_z_dniami)
 
-print(random_day(3))
-print(lista_z_dniami)
+print(random_daytime(3))
 
 # Jak sprawdzisz czy funkcja działa dobrze?
-# Dodaj opcjonalny argument do funkcji który będzie decydował o tym czy zwaracan lista jest posortowana lub nie
+# Dodaj opcjonalny argument do funkcji który będzie decydował o tym czy zwaracana lista jest posortowana lub nie
+
+print('\n'+'Zad. 3b.')
+
+def random_daytime(ile_dni, sorted):
+    lista_z_dniami = []
+    for dzien in range(ile_dni):
+        random_date = str(gen_datetime())
+        lista_z_dniami.append(random_date)
+    if sorted == True:
+        return(sorted(lista_z_dniami))
+    else:
+        return(lista_z_dniami)
+
+print(random_daytime(3,True))
+
 # Jak sprawdzisz działanie dodatkowego argumentu?
+
+print('\n'+'Zad. 3c.')
 
 # Pętle
 # 4. Łańcuch DNA można przedstawić w postaci stringa zawierającego litery A, C, T i G
