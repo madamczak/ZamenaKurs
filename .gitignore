@@ -8,5 +8,4 @@
 /httpRequests/
 *.iml
 /.idea/**
-.vscode/.ropeproject/config.py
-.vscode/.ropeproject/objectdb
+.vscode/.ropeproject/*
