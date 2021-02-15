@@ -34,15 +34,15 @@ print(average([10,20,10,20]))
 
 print('\n'+'Zad. 2b.')
 
-def average(lst):
+def average2b(lst):
     if type(lst) == str:
-        return print("incorrect input parameter, must be list of ints")
+        return "incorrect input parameter, must be list of ints"
     else:
         return sum(lst)/len(lst)
 
-assert average([2,4]) == 3
+assert average2b([2,4]) == 3
 
-print(average([5,8,19,21]))
+print(average2b([5,8,19,21]))
 
 # 3 napisz funkcję generującą losowe obiekty datetime. Funkcja posiada argument wejściowy ile_dni, a zwraca listę losowych obiektów datetime o takiej długości jak argument ile_dni.
 
@@ -64,40 +64,106 @@ def random_daytime(ile_dni):
     for dzien in range(ile_dni):
         random_date = str(gen_datetime())
         lista_z_dniami.append(random_date)
-    return(lista_z_dniami)
+    return(sorted(lista_z_dniami))
 
-print(random_daytime(3))
+print(random_daytime(10))
 
 # Jak sprawdzisz czy funkcja działa dobrze?
 # Dodaj opcjonalny argument do funkcji który będzie decydował o tym czy zwaracana lista jest posortowana lub nie
 
 print('\n'+'Zad. 3b.')
 
-def random_daytime(ile_dni, sorted):
-    lista_z_dniami = []
+def random_daytime3b(ile_dni, posortowane=True):
+    lista_z_dniami3b = []
     for dzien in range(ile_dni):
         random_date = str(gen_datetime())
-        lista_z_dniami.append(random_date)
-    if sorted == True:
-        return(sorted(lista_z_dniami))
+        lista_z_dniami3b.append(random_date)
+    if posortowane == True:
+        lista_z_dniami3b = sorted(lista_z_dniami3b)
+        return lista_z_dniami3b
     else:
-        return(lista_z_dniami)
+        return(lista_z_dniami3b)
 
-print(random_daytime(3,True))
+print(random_daytime3b(5))
 
 # Jak sprawdzisz działanie dodatkowego argumentu?
 
 print('\n'+'Zad. 3c.')
+print("Można zrobić parę testów i sprawdzić organoleptycznie, albo z outputowanej listy zobaczyć, czy index kolejne indexy nie są niższe niż poprzednie.")
+
+dlugosc_listy = 5
+lista3c = random_daytime3b(dlugosc_listy)
+print(lista3c)
+
+for i in range(1,dlugosc_listy):
+    if lista3c[i] > lista3c[i-1]:
+        print(str(i) + " OK")
+    else:
+        print("nieposortowane")
 
 # Pętle
 # 4. Łańcuch DNA można przedstawić w postaci stringa zawierającego litery A, C, T i G
 # (od nazw: Adenina, Cytozyna, Tymina i Guanina) np tak:
 # 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
 # a) Napisz funkcję adenine_count, która używając pętli for zwróci ile jest nukleotydów A w łańcuchu DNA
+
+print('\n'+'Zad. 4a.')
+
+dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+
+def adenine_count(dna):
+    nukleotydy_A = 0
+    for nukleotyd in range(len(dna)):
+        if dna[nukleotyd] == "A":
+            nukleotydy_A = nukleotydy_A + 1
+    return nukleotydy_A
+
+print(adenine_count(dna))
+
 # b) Napisz funkcję adenine_count_while, która używając pętli while zwróci ile jest nukleotydów A w łańcuchu DNA
+
+print('\n'+'Zad. 4b.')
+
+def adenine_count_while(dna):
+    i = 0
+    nukleotydy_A = 0
+    while i != len(dna):
+        if dna[i] == "A":
+            nukleotydy_A = nukleotydy_A + 1
+        i += 1
+    return nukleotydy_A
+
+print(adenine_count_while(dna))
+
 # c) Napisz funkcję nucleotide_count, która używając dowolnej pętli zwróci ile jest
 # nukleotydów podanych w argumencie (nucleotide_type) w łańcuchu DNA
 # Jak inaczej można policzyć wystąpienia nukleotydó w łańcuchu? Które podejście jest szybsze? Jak to sprawdzisz?
+
+print('\n'+'Zad. 4c.')
+
+def nucleotide_count(dna,nucleotide_type):
+    nucleotides = ["A", "C", "T", "G"]
+    if nucleotide_type not in nucleotides:
+        return "Nucleotide type must be A, C, T or G"
+    else:
+        i = 0
+        count = 0
+        for i in range(len(dna)):
+            if dna[i] == nucleotide_type:
+                count = count + 1
+        return count
+
+print(nucleotide_count(dna,"G"))
+
+print('\n'+'Można to zrobić jeszcze tak:')
+
+nucletide_a_count = dna.count("A")
+nucletide_c_count = dna.count("C")
+nucletide_t_count = dna.count("T")
+nucletide_g_count = dna.count("G")
+
+print("There is: " + str(nucletide_a_count) + " type A nucleotides, " + str(nucletide_c_count) + " type C nucleotides, " + str(nucletide_t_count) + " type T nucleotides, and " + str(nucletide_g_count) + " type G nucleotides in provided DNA.")
+
 # d) Napisz funkcję która jako argument przyjmie łańcuch DNA i zwróci słownik
 # w którym kluczem będzie nukleotyd a wartością ilość jego wystąpień w tym łańcuchu
 
