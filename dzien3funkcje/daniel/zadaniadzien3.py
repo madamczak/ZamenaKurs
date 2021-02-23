@@ -141,6 +141,10 @@ print(adenine_count_while(dna))
 
 print('\n'+'Zad. 4c.')
 
+from timeit import default_timer as timer
+
+a_timer_start = timer()
+
 def nucleotide_count(dna,nucleotide_type):
     nucleotides = ["A", "C", "T", "G"]
     if nucleotide_type not in nucleotides:
@@ -155,7 +159,12 @@ def nucleotide_count(dna,nucleotide_type):
 
 print(nucleotide_count(dna,"G"))
 
+a_timer_end = timer()
+print(a_timer_end - a_timer_start)
+
 print('\n'+'Można to zrobić jeszcze tak:')
+
+b_timer_start = timer()
 
 nucletide_a_count = dna.count("A")
 nucletide_c_count = dna.count("C")
@@ -164,13 +173,112 @@ nucletide_g_count = dna.count("G")
 
 print("There is: " + str(nucletide_a_count) + " type A nucleotides, " + str(nucletide_c_count) + " type C nucleotides, " + str(nucletide_t_count) + " type T nucleotides, and " + str(nucletide_g_count) + " type G nucleotides in provided DNA.")
 
+b_timer_end = timer()
+print(b_timer_end - b_timer_start)
+
 # d) Napisz funkcję która jako argument przyjmie łańcuch DNA i zwróci słownik
 # w którym kluczem będzie nukleotyd a wartością ilość jego wystąpień w tym łańcuchu
 
+print('\n'+'Zad. 4d.')
+
+def nucleotides_dict(dna):
+    nucleotide_types = ["A", "C", "T", "G"]
+    nucleotides = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
+    i = 0
+    for i in range(len(dna)):
+        if dna[i] not in nucleotide_types:
+            pass
+        else:
+            nucleotides[dna[i]] = nucleotides[dna[i]] + 1
+    return nucleotides
+
+print(nucleotides_dict(dna))
+
 # e) W pliku rosalind_dna.txt masz łańcuch DNA zawierający około 900 nukleotydów. Wczytaj go i podaj zawartość
 # A, T, C i G w tym łańcuchu.
+
+print('\n'+'Zad. 4e.')
+
+import os
+parentDirectory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+
+rosalind = open(os.path.join(parentDirectory, 'ZamenaKurs\\dzien3funkcje' ,'rosalind_dna.txt'))
+rosalind_dna = rosalind.read()
+rosalind.close()
+
+# rosalind_dna = rosalind_dna[0]
+
+print(rosalind_dna)
+
+print(nucleotides_dict(rosalind_dna))
 
 # 5. Łańcuch RNA jest bardzo podobny do DNA i składa się z następujących nukleotydów A, C, U i G (U - uracyl).
 # Twoim celem jest napisanie takiego samego zestawu funkcji dla RNA jak dla DNA w zadaniu 4. Jak to zrobisz?
 # Będziesz kopiował? Będziesz modyfikował funkcje z zadania 4, tak żeby obsługiwały oba typy łańcuchów?
 # Które podejście będzie lepsze i co z niego wyniknie?
+
+print('\n'+'Zad. 5c.')
+
+# można kopiować, można modyfikować, a niektórych nie trzeba:
+# w podpunkcie a) i b) szukamy adeniny, więc można zostawić, ewentualnie zmienić parametru na jaki oczekuje funkcja z dna na chain, żeby było legit
+# w podpunkcie c) można pomodyfikować: dodaję do listy uracyl i gra na dwóch łańcuchach
+# albo można dodać parametr funkcji chain type i validować z odpowiednią listą nukleotydów
+
+def nucleotide_count_5(chain,chain_type,nucleotide_type):
+    nucleotides_dna = ["A", "C", "T", "G"]
+    nucleotides_rna = ["A", "C", "G", "U"]
+    if chain_type == "dna":
+        if nucleotide_type not in nucleotides_dna:
+            return "Nucleotide type must be A, C, T or G"
+    if chain_type == "rna":
+        if nucleotide_type not in nucleotides_rna:
+            return "Nucleotide type must be A, C, G or U"
+    else:
+        i = 0
+        count = 0
+        for i in range(len(chain)):
+            if chain[i] == nucleotide_type:
+                count = count + 1
+        return count
+
+print(nucleotide_count_5(dna,"dna","U"))
+
+# wersje alternatywną też można trochę zupgrade'ować
+
+nucleotide_a_count = dna.count("A")
+nucleotide_c_count = dna.count("C")
+nucleotide_t_count = dna.count("T")
+nucleotide_g_count = dna.count("G")
+nucleotide_u_count = dna.count("U")
+
+if nucleotide_t_count == 0 and nucleotide_u_count > 0:
+    chain_type = "RNA"
+    print("There is: " + str(nucleotide_a_count) + " type A nucleotides, " + str(nucleotide_c_count) + " type C nucleotides, " + str(nucleotide_u_count) + " type U nucleotides, and " + str(nucletide_g_count) + " type G nucleotides in provided " + chain_type + " chain.")
+else:
+    chain_type = "DNA"
+    print("There is: " + str(nucleotide_a_count) + " type A nucleotides, " + str(nucleotide_c_count) + " type C nucleotides, " + str(nucleotide_t_count) + " type T nucleotides, and " + str(nucletide_g_count) + " type G nucleotides in provided " + chain_type + " chain.")
+
+print('\n'+'Zad. 5d.')
+
+def nucleotides_dict_5(chain,chain_type):
+    chain_types = ["dna", "rna"]
+    nucleotides_dna = ["A", "C", "T", "G"]
+    nucleotides_rna = ["A", "C", "G", "U"]
+    if chain_type not in chain_types:
+        return "Chain type must be either dna or rna, sory."
+    if chain_type == "dna":
+        nucleotide_types = nucleotides_dna
+        nucleotides = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
+    if chain_type == "rna":
+        nucleotide_types = nucleotides_rna
+        nucleotides = {'A': 0, 'C': 0, 'T': 0, 'U': 0}
+    i = 0
+    for i in range(len(dna)):
+        if chain[i] not in nucleotide_types:
+            print("Incorrect chain span: " + chain[i])
+            pass
+        else:
+            nucleotides[chain[i]] = nucleotides[chain[i]] + 1
+    return nucleotides
+
+print(nucleotides_dict_5(dna,"dna"))
