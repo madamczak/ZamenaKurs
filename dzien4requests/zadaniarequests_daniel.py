@@ -15,9 +15,9 @@ agent = {
 from bs4 import BeautifulSoup
 
 def url_validator(url):
-    if url.startswith("https") == True:
+    if url.startswith("https"):
         print("This is secure http url")
-    elif url.startswith("http") == True:
+    elif url.startswith("http"):
         print("This is http url")
     else:
         return "Dej porządny link."
@@ -27,10 +27,10 @@ def url_validator(url):
 
     if response_code.startswith("2"):
         print("Response code " + response_code + ": OK")
-    elif reponse_code.startswith("3"):
+    elif response_code.startswith("3"):
         print("Response code " + response_code + ": Redirect")
     else:
-        return "Reponse code doesn't begin with either 2 or 3 meaning it's useless. Try harder."
+        return "Response code doesn't begin with either 2 or 3 meaning it's useless. Try harder."
     
     soup = BeautifulSoup(url_get.text, "lxml")
 
@@ -54,7 +54,7 @@ def nedvizhimost_price_parser(soup):
     price_span = soup.find('span', {"class": "oglDetailsMoney"})
     price_output = (price_span.contents.pop(0))
     cena = int(price_output.replace(" ", ""))
-    return(cena)
+    return cena
 
 link1 = "https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-wtorny/mieszkanie-2-pokoje-gdynia-doskonala-inwestycja-ogl64070755.html"
 link2 = "https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-pierwotny/mieszkanie-b32-sw-piotra-87-00m2-ogl64079118.html"
