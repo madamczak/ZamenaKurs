@@ -143,4 +143,16 @@ def create_new_config_file(old_config_file_text, new_file_path):
             new_file.write(f"{opening_and_closing_tags.get(app)}\n")
 
 
-create_new_config_file(config_file_text, "new_cfg_file.txt")
+if __name__ == "__main__":
+    import argparse
+
+    my_parser = argparse.ArgumentParser(description='Unparse config file machine names. Usage: "python whitelists.py [input_config_path] [output_config_name]"')
+    my_parser.add_argument('Path', type=str, help='the path to config file')
+    my_parser.add_argument('OutFile', type=str, help='the path to config file')
+
+    args = my_parser.parse_args()
+    config_file_path = args.Path
+    output_file = args.OutFile
+
+    with open(config_file_path) as f:
+        create_new_config_file(f.read(), output_file)
