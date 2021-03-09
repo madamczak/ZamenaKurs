@@ -22,7 +22,7 @@ if __name__ == "__main__":
     import argparse
 
     my_parser = argparse.ArgumentParser(description='')
-    my_parser.add_argument('site', type=str, help='')
+    my_parser.add_argument('--site', type=str, help='')
     args = my_parser.parse_args()
 
     if args.site:
