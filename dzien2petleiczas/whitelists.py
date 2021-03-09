@@ -10,6 +10,7 @@ whitelist.0 = server1
 """
 import re
 
+
 def find_apps(config_file_text):
     all_apps = []
 
