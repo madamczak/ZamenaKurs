@@ -27,32 +27,45 @@ def parse_price(soup):
 
 
 def parse_address(soup):
-    pass
-
+    address_div = soup.find('div', {"class": "oglField--address"})
+    district_div = address_div.find('div', {"class": "oglField__container"})
+    address = district_div.text.replace("Adres", "")
+    return address
+#D
 def parse_price_square_meter(soup):
     pass
 
 def parse_building_year(soup):
-    pass
+    building_year_div = soup.find('div', {"class": "oglField--rok_budowy"})
+    building_year_span = building_year_div.find('span', {"class": "oglField__value"})
+    building_year = int(building_year_span.text)
+    return building_year
 
+#P
 def parse_area(soup):
     pass
-
+#D
 def parse_floor(soup):
     pass
-
+#P
 def parse_building_type(soup):
     pass
-
+#D
 def parse_heating_type(soup):
     pass
-
+#P
 def parse_number_of_rooms(soup):
     pass
-
+#D
 def parse_building_floors(soup):
     pass
 
+
+link="https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-wtorny/mieszkanie-2-pokoje-gdynia-doskonala-inwestycja-ogl64070755.html"
+soup=get_soup(link)
+
+print(parse_building_year(soup))
+# print(parse_price(soup))
 
 # "REAL_ESTATE" = {
 #     "price": int,
