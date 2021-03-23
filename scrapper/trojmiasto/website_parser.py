@@ -84,17 +84,36 @@ def parse_building_floors(soup):
 link="https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-wtorny/mieszkanie-2-pokoje-gdynia-doskonala-inwestycja-ogl64070755.html"
 soup=get_soup(link)
 
-print(parse_price_square_meter(soup))
-print(parse_floor(soup))
-print(parse_heating_type(soup))
-print(parse_building_floors(soup))
-print(parse_area(soup))
-# print(parse_price(soup))
+real_estate = {
+    "price": parse_price(soup),
+    "address": parse_address(soup),
+    "square_meter_price": parse_price_square_meter(soup),
+    "building_year": parse_building_year(soup),
+    "area": parse_area(soup),
+    "floor": parse_floor(soup),
+    "building_type": parse_building_type(soup),
+    "heating_type": parse_heating_type(soup),
+    "number_of_rooms": parse_number_of_rooms(soup),
+    "building_floors": parse_building_floors(soup)
+}
 
-# "REAL_ESTATE" = {
-#     "price": int,
-#     "address": text,
-#     "square_meter_price": float,
-#     "building_year": int,
-#     ...
-# }
+# for i,j in real_estate.items():
+#     print(real_estate.get(i,"Nie ma."))
+
+def linck2dick(link):
+    soup=get_soup(link)
+    dict_from_link = {
+        "price": parse_price(soup),
+        "address": parse_address(soup),
+        "square_meter_price": parse_price_square_meter(soup),
+        "building_year": parse_building_year(soup),
+        "area": parse_area(soup),
+        "floor": parse_floor(soup),
+        "building_type": parse_building_type(soup),
+        "heating_type": parse_heating_type(soup),
+        "number_of_rooms": parse_number_of_rooms(soup),
+        "building_floors": parse_building_floors(soup)
+    }
+    return dict_from_link
+
+print(linck2dick(link))
