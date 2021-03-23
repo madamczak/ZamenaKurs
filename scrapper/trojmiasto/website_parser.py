@@ -33,7 +33,10 @@ def parse_address(soup):
     return address
 #D
 def parse_price_square_meter(soup):
-    pass
+    price_square_meter_div = soup.find('div', {"class": "oglField oglField--cena_za_m2"})
+    price_square_meter_span = price_square_meter_div.span.find(text=True, recursive=False)
+    price_square_meter = int(price_square_meter_span.replace(" ", ""))
+    return price_square_meter
 
 def parse_building_year(soup):
     building_year_div = soup.find('div', {"class": "oglField--rok_budowy"})
@@ -41,7 +44,7 @@ def parse_building_year(soup):
     building_year = int(building_year_span.text)
     return building_year
 
-# P
+#P
 def parse_area(soup):
     area_div = soup.find('div', {"id": "show-powierzchnia"})
     area_span = area_div.find('span', {"class": "oglField__value"})
@@ -49,8 +52,11 @@ def parse_area(soup):
     return area
 # D
 def parse_floor(soup):
-    pass
-# P
+    floor_div = soup.find('div', {"class": "oglField oglField--pietro"})
+    floor_span = floor_div.find('span', {"class": "oglField__value"})
+    floor = int(floor_span.text)
+    return floor
+#P
 def parse_building_type(soup):
     building_type_div = soup.find('div', {"class": "oglField--rodzaj_nieruchomosci"})
     building_type_span = building_type_div.find('span', {"class": "oglField__value"})
@@ -58,7 +64,10 @@ def parse_building_type(soup):
     return building_type
 #D
 def parse_heating_type(soup):
-    pass
+    heating_type_div = soup.find('div', {"class": "oglField oglField--typ_ogrzewania"})
+    heating_type_span = heating_type_div.find('span', {"class": "oglField__value"})
+    heating_type = heating_type_span.text
+    return heating_type
 #P
 def parse_number_of_rooms(soup):
     number_of_rooms_div = soup.find('div', {"class": "oglField--l_pokoi"})
@@ -67,12 +76,18 @@ def parse_number_of_rooms(soup):
     return number_of_rooms
 #D
 def parse_building_floors(soup):
-    pass
-
+    building_floors_div = soup.find('div', {"class": "oglField oglField--l_pieter"})
+    building_floors_span = building_floors_div.find('span', {"class": "oglField__value"})
+    building_floors = int(building_floors_span.text)
+    return building_floors
 
 link="https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-wtorny/mieszkanie-2-pokoje-gdynia-doskonala-inwestycja-ogl64070755.html"
 soup=get_soup(link)
 
+print(parse_price_square_meter(soup))
+print(parse_floor(soup))
+print(parse_heating_type(soup))
+print(parse_building_floors(soup))
 print(parse_area(soup))
 # print(parse_price(soup))
 
