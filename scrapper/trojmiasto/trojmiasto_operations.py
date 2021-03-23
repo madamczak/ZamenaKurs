@@ -1,5 +1,4 @@
-from scrapper.databases.sqlite_operations import check_if_link_exists
-from scrapper.trojmiasto.website_parser import parse
+from ..databases.sqlite_operations import check_if_link_exists
 
 
 def parse_trojmiasto():
