@@ -17,13 +17,12 @@ from scrapper.trojmiasto.website_parser import linck2dick
 def check_if_link_exists(database_file_name, lnk):
     con = sqlite3.connect(database_file_name)
     cur = con.cursor()
-    cur.execute("SELECT COUNT(*) FROM real_estate WHERE link='https://ogloszenia.trojmiasto.pl/nieruchomosci-rynek-wtorny/mieszkanie-2-pokoje-gdynia-doskonala-inwestycja-ogl64070755.html'")
+    cmd = f"SELECT COUNT(*) FROM real_estate WHERE link=({flat_dictionary.get('link')})"
+    cur.execute(cmd)
     all_values = cur.fetchall()
     for v in all_values:
         num_of_occur = int(str(v).replace("(","").replace(",)",""))
-
-        if num_of_occur >= 1:
-            break
+    return num_of_occur
 
 
     # for a in num_of_occur:
