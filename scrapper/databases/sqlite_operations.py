@@ -17,12 +17,14 @@ from scrapper.trojmiasto.website_parser import linck2dick
 def check_if_link_exists(database_file_name, lnk):
     con = sqlite3.connect(database_file_name)
     cur = con.cursor()
-    cmd = f"SELECT COUNT(*) FROM real_estate WHERE link=({flat_dictionary.get('link')})"
+    cmd = f"SELECT COUNT(*) FROM real_estate WHERE link='{lnk}'"
     cur.execute(cmd)
     all_values = cur.fetchall()
-    for v in all_values:
-        num_of_occur = int(str(v).replace("(","").replace(",)",""))
-    return num_of_occur
+    v = all_values[0][0]
+    # for v in all_values:
+    #     num_of_occur = int(str(v).replace("(","").replace(",)",""))
+    con.close()
+    return bool(v)
 
 
     # for a in num_of_occur:
