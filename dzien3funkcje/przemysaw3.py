@@ -24,7 +24,7 @@
 #
 # lista_sredniej=[1,2,3,4,5]
 #
-# #print(artmtc_avg(lista_sredniej))
+# print(artmtc_avg(lista_sredniej))
 #
 # # Jakie tu mogą być problemy? Jak sprawdzisz czy funkcja działa dobrze?
 #
