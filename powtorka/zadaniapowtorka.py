@@ -2,7 +2,7 @@
 #prawdopodobienstwo wystąpienia każdego z nukleotydów wynosi 25%
 #podpowiedź - random.random() zwraca losową wartość float od 0 do 1
 # from random import random
-#
+
 # def dna_generator():
 #     random_float = random()
 #     if random_float < 0.25:
@@ -14,6 +14,7 @@
 #     elif 0.75 <= random_float:
 #         print("G")
 #
+# # zamiast print - return
 #
 # print(dna_generator())
 
@@ -27,7 +28,7 @@
 #
 # text_2_add = dna_generator(100000)
 #
-# f = open("DNA.txt", 'w+')
+# f = open("DNA.txt", 'w')
 # f.write(str(text_2_add))
 # f.close()
 
@@ -58,15 +59,9 @@
 # ze zmnienionym urlops
 # obie rzeczy robi sie podobnie ale musisz w dokumentacji metody open poczytać jaki tam trzeba dać argument żeby czytać
 # a jaki żeby wpisywać lub dodawać linie do istniejącego pliku
-
+#
 with open("cardata2_final_ostateczna.log", 'w') as outfile, open("cardata2.log", 'r') as file:
     for line in file:
         if line.startswith("urlops"):
-            line = line[0:len("URL Operations")]
+            line = line.replace("urlops", "URL Operations")
         outfile.write(line)
-    #
-    # with open(newfile, 'w') as outfile, open(oldfile, 'r', encoding='utf-8') as infile:
-    #     for line in infile:
-    #         if line.startswith(txt):
-    #             line = line[0:len(txt)] + ' - Truly a great person!\n'
-    #         outfile.write(line)

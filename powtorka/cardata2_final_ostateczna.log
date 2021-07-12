@@ -2469,7 +2469,8 @@ LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - W
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 158, link: https://allegro.pl/kategoria/suzuki-baleno-12685.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 159, link: https://allegro.pl/kategoria/suzuki-wagon-r-12689.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 160, link: https://allegro.pl/kategoria/suzuki-xl7-146756.
-urlops - INFO:LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 161, link: https://allegro.pl/kategoria/suzuki-liana-18402.
+URL Operations - INFO: openLinkAndReturnSoup - Problems with parsing https://allegro.pl/kategoria/klasa-c-w203-2000-2007-18252?p=2&startingTime=7, sleep 60 seconds.
+LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 161, link: https://allegro.pl/kategoria/suzuki-liana-18402.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 162, link: https://allegro.pl/kategoria/suzuki-samurai-12686.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 163, link: https://allegro.pl/kategoria/suzuki-splash-145060.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 164, link: https://allegro.pl/kategoria/sx4-i-2006-2013-249795.
@@ -3026,7 +3027,8 @@ LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - W
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 715, link: https://allegro.pl/kategoria/cherokee-v-2014-249668.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 716, link: https://allegro.pl/kategoria/cherokee-iv-2008-2013-249667.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 717, link: https://allegro.pl/kategoria/cherokee-ii-1987-2001-18200.
-urlops - INFO:LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 718, link: https://allegro.pl/kategoria/cherokee-iii-2001-2008-18201.
+URL Operations - INFO: openLinkAndReturnSoup - Problems with parsing https://allegro.pl/kategoria/clio-iv-2012-145056?p=2&startingTime=7, sleep 60 seconds.
+LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 718, link: https://allegro.pl/kategoria/cherokee-iii-2001-2008-18201.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 719, link: https://allegro.pl/kategoria/wrangler-i-1987-1995-249669.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 720, link: https://allegro.pl/kategoria/wrangler-ii-1997-2006-249670.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 721, link: https://allegro.pl/kategoria/wrangler-iii-2006-249671.
@@ -11552,7 +11554,9 @@ cars.py - INFO: Collect - End of collection.
 dbops - INFO: Connection to db is closed.
 dbops - INFO: Connection to db: 'crontest3.db' is set up.
 cars.py - INFO: Collect - Started: 28-12-2018 00:01
-urlops - INFO:urlops - INFO:LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 3, link: https://allegro.pl/kategoria/rover-214-83633.
+URL Operations - INFO: openLinkAndReturnSoup - Problems with parsing https://allegro.pl/kategoria/bmw-m4-251267, sleep 60 seconds.
+URL Operations - INFO: openLinkAndReturnSoup - Problems with parsing https://allegro.pl/kategoria/mitsubishi-asx-106892, sleep 60 seconds.
+LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 3, link: https://allegro.pl/kategoria/rover-214-83633.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 2, link: https://allegro.pl/kategoria/rover-25-12653.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 4, link: https://allegro.pl/kategoria/rover-620-83745.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 1, link: https://allegro.pl/kategoria/osobowe-mercury-57993.
@@ -11794,7 +11798,8 @@ LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - W
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 240, link: https://allegro.pl/kategoria/smart-roadster-18395.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 241, link: https://allegro.pl/kategoria/forfour-i-2004-2006-251316.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 242, link: https://allegro.pl/kategoria/forfour-ii-2014-251317.
-urlops - INFO:LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 243, link: https://allegro.pl/kategoria/alfa-romeo-146-12417.
+URL Operations - INFO: openLinkAndReturnSoup - Problems with parsing https://allegro.pl/kategoria/polo-v-2009-2017-109915?p=2&startingTime=7, sleep 60 seconds.
+LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_3 - Working on category with id: 243, link: https://allegro.pl/kategoria/alfa-romeo-146-12417.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_0 - Working on category with id: 244, link: https://allegro.pl/kategoria/alfa-romeo-147-12418.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_2 - Working on category with id: 245, link: https://allegro.pl/kategoria/alfa-romeo-giulietta-105401.
 LinksCollector - INFO: _getNewLinksFromCategorySite - ThreadPoolExecutor-0_1 - Working on category with id: 246, link: https://allegro.pl/kategoria/alfa-romeo-156-12420.

@@ -20,7 +20,7 @@
 # #2. napisz funkcję która policzy średnią arytmetyczną wartości z listy podanej jako argument do funkcji
 #
 # def artmtc_avg(numbers):
-#     return float(sum(numbers)) / max(len(numbers), 1)
+#     return float(sum(numbers)) / len(numbers)
 #
 # lista_sredniej=[1,2,3,4,5]
 #
@@ -44,7 +44,7 @@
 # date_from_random = str(random_integer_1) + '-' + str(random_integer_2) + '-' + str(random_integer_3)
 #
 # obiekt_datetime = datetime.datetime.strptime(date_from_random, '%d-%m-%Y')
-# print(obiekt_datetime)
+# print(obiekt_datetime.date())
 #
 # def random_datetime(ile_dni):
 #     random_datetime_list=[]
@@ -103,7 +103,7 @@ dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
 #             nukleotydy_t = nukleotydy_t + 1
 #         elif dna[nukleotyd] == "G":
 #             nukleotydy_g = nukleotydy_g + 1
-#     return nukleotydy_a, nukleotydy_c, nukleotydy_t, nukleotydy_g
+#     return {"a":nukleotydy_a,"c":nukleotydy_c,"t":nukleotydy_t,"g":nukleotydy_g} #nukleotydy_a, nukleotydy_c, nukleotydy_t, nukleotydy_g
 #
 # print(nucleotide_count(dna))
 
@@ -112,11 +112,12 @@ dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
 # d) Napisz funkcję która jako argument przyjmie łańcuch DNA i zwróci słownik
 # w którym kluczem będzie nukleotyd a wartością ilość jego wystąpień w tym łańcuchu
 
-def nucleotide_count_dict(dna):
-    count = 0
-    for nukleotyd in range(len(dna)):
-        if isinstance(d[x], list):
-            count += len(d[x])
+#  zrobione w pukncie C
+# def nucleotide_count_dict(dna):
+#     count = 0
+#     for nukleotyd in range(len(dna)):
+#         if isinstance(d[x], list):
+#             count += len(d[x])
 
 # e) W pliku rosalind_dna.txt masz łańcuch DNA zawierający około 900 nukleotydów. Wczytaj go i podaj zawartość
 # A, T, C i G w tym łańcuchu.
